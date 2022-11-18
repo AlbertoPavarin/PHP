@@ -13,7 +13,9 @@ $db = $database->connect();
 $person = new Person($db);
 $data = json_decode(file_get_contents("php://input"));
 
-if (TRUE    )
+echo var_dump($data);
+
+if (!empty($data))
 {
     if ($person->create($data->name, $data->surname))
     {

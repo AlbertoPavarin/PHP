@@ -28,9 +28,9 @@ Class Person
         $this->name = $name;
         $this->surname = $surname;
 
-        $query = "INSERT INTO" . $table_name . "(name, surname)" . "VALUES(?, ?)";
+        $query = "INSERT INTO " .  $this->table_name . " (name, surname)" . " VALUES(?, ?)";
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param('ss', $this->name, $this-surname);
+        $stmt->bind_param('ss', $this->name, $this->surname);
         if ($stmt->execute())
         {
             return TRUE;
